@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoscope</title>
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Raleway:wght@200;400;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+            logo
+        </div>
+        <button class="burger-btn">
+            <i class="ti ti-menu-2"></i>
+            <i class="ti ti-x hide"></i>
+        </button>
+        <ul class="nav__items">
+            <li class="nav__item"><a href="#horoscopes">Horoscopes</a></li>
+            <li class="nav__item"><a href="#compatibility">Compatibility</a></li>
+            <li class="nav__item"><a href="magic.html">Magic 8-Ball</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1 class="header__heading" id="horoscopes">Horoscope</h1>
+    </header>
+
+    <main class="main">
+        <section class="horoscope section-padding">
+            <div class="wrapper">
+                <div class="section-heading-btn"></div>
+                <div class="horoscope__box-btn">
+                    <button class="horoscope__today-btn button-35"><span class="text">today</span></button>
+                    <button class="horoscope__tomorrow-btn button-35"><span class="text">tomorrow</span></button>
+                    <button class="horoscope__yesterday-btn button-35"><span class="text">yesterday</span></button>
+                </div>
+                <div class="horoscope__box-info">
+                    <p class="horoscope__error-info"></p>
+                    <p class="horoscope__good-info"></p>
+                </div>
+
+                <div class="horoscope__box">
+                    <div class="horoscope__box-img">
+
+                        <div class="horoscope__img">
+                            <img src="/img/zodiac-signs-big.jpg" alt="zodiac signs" class="horoscope__img">
+
+                            <div class="horoscope__img-shadow"></div>
+                        </div>
+                        <p class="horoscope__zodiac"></p>
+
+                    </div>
+
+
+                    <div class="horoscope__box-text">
+                        <div class="horoscope__text">
+                            <p class="horoscope__text-date"></p>
+                            <p class="horoscope__text-compatibility"></p>
+                            <p class="horoscope__text-lucky-number"></p>
+                            <p class="horoscope__text-lucky-time"></p>
+                            <p class="horoscope__text-color"></p>
+                            <p class="horoscope__text-range"></p>
+                            <p class="horoscope__text-mood"></p>
+                            <p class="horoscope__text-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

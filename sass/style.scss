@@ -1,0 +1,321 @@
+@import './components';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	min-height: 100vh;
+}
+
+body {
+	font-family: 'Myriad Pro', sans-serif;
+	font-size: 1.4rem;
+	background-image: linear-gradient(315deg, #c304e9 0%, #011a20 74%);
+}
+
+.nav {
+	&__items {
+		position: fixed;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100vh;
+		width: 100%;
+		background-color: #fff;
+
+		transform: translateX(100%);
+		transition: transform 0.3s;
+
+		text-transform: uppercase;
+		list-style: none;
+		z-index: 100;
+
+		a {
+			font-size: 2rem;
+			color: darkcyan;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+		a:hover {
+			color: #65e6e6;
+		}
+	}
+
+	&__item {
+		margin: 20px 0;
+		text-align: center;
+	}
+
+	.show-menu {
+		transform: translateX(0);
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.logo {
+		margin: 20px;
+		color: rgb(101, 230, 230);
+		z-index: 100;
+	}
+
+	.burger-btn {
+		// position: absolute;
+		position: fixed;
+		top: 0;
+		right: 5px;
+		padding: 10px 20px;
+		font-size: 36px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: rgb(101, 230, 230);
+		z-index: 1000;
+		transition: transform 0.3s;
+	}
+
+	.burger-btn:hover {
+		transform: scale(1.1);
+	}
+}
+
+.header__heading {
+	display: flex;
+	justify-content: center;
+	color: #ddd;
+}
+
+//MAIN
+//HOROSCOPE SECTION
+.horoscope {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin-top: 4em;
+
+		&-img {
+			position: relative;
+			margin-top: 10px;
+			text-align: center;
+		}
+	}
+
+	&__img {
+		position: relative;
+		width: 100%;
+		// min-height: 100%;
+		&-shadow {
+			position: absolute;
+			left: 5px;
+			right: 5px;
+			top: 0;
+			bottom: 4px;
+			background-size: cover;
+			background-image: linear-gradient(315deg, #1e182067 0%, #31caf06c 74%);
+		}
+	}
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		color: #ddd;
+		p {
+			margin: 0.5em 0;
+		}
+		p:first-of-type {
+			margin-bottom: 25px;
+			color: #65e6e6;
+		}
+	}
+
+	&__box-btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// button {
+		// 	margin-top: 1em;
+		// 	padding: 0.5em 1em;
+		// 	font-weight: bold;
+		// 	border: none;
+		// 	width: 90px;
+		// 	color: rgb(200, 166, 166);
+		// 	cursor: pointer;
+		// 	background-color: rgba(167, 121, 121, 0.89);
+		// 	transition: background-color 0.3s;
+		// }
+		// button:hover {
+		// 	background-color: rgb(167, 121, 121);
+		// }
+
+		// <button class="button-48" role="button"><span class="text">Button 48</span></button>
+
+		// 		<!-- HTML !-->
+		// <button class="button-35" role="button">Button 35</button>
+
+		/* CSS */
+		.button-35 {
+			align-items: center;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			border: none;
+			// border-radius: 12px;
+			// box-shadow: transparent 0 0 0 3px, rgba(222, 222, 222, 0.102) 0 6px 20px;
+			box-sizing: border-box;
+			// color: #121212;
+			// color: #ffd700;
+			color: #ddd;
+			cursor: pointer;
+			display: inline-flex;
+			flex: 1 1 auto;
+			// font-family: Inter, sans-serif;
+			font-family: 'Inter', sans-serif;
+			font-size: 1.4rem;
+			font-weight: 700;
+			justify-content: center;
+			line-height: 1;
+			margin: 1em;
+			outline: none;
+			padding: 1em 1.2em;
+			text-align: center;
+			text-decoration: none;
+			transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+			white-space: nowrap;
+			// border: 0;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+		}
+
+		.button-35:hover {
+			box-shadow: transparent 0 0 0 0px, rgba(222, 222, 222, 0.202) 0 6px 20px;
+		}
+		.button-35:focus {
+			box-shadow: rgba(149, 19, 158, 0.774) 0 0 0 2px, transparent 0 0 0 0;
+		}
+	}
+
+	&__box-info {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__error-info,
+	&__good-info {
+		position: absolute;
+		margin-top: 1em;
+		text-align: center;
+		font-size: 2rem;
+		color: darkorange;
+	}
+
+	&__good-info {
+		margin-top: 0;
+		color: #3add8c;
+	}
+
+	&__zodiac {
+		position: absolute;
+		top: -18px;
+		font-size: 3rem;
+		padding: 0 15px;
+		width: 100%;
+		background-image: linear-gradient(215deg, #65e6e6 74%, #1052e2 0%);
+		color: #fff;
+	}
+
+	&__zodiac::first-letter {
+		text-transform: uppercase;
+	}
+}
+
+span {
+	font-weight: bold;
+	color: rgba(221, 221, 221, 0.7);
+}
+// ****************
+// MEDIA
+// ****************
+@media (min-width: 576px) {
+	.horoscope {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 55%;
+
+				&--right {
+					text-align: right;
+				}
+			}
+			&-img {
+				width: 40%;
+
+				&--right {
+					order: 1;
+				}
+			}
+		}
+
+		&__img {
+			margin-bottom: 0;
+			max-height: 300px;
+		}
+
+		&__text {
+			margin-top: -20px;
+		}
+
+		&__box-btn {
+			flex-direction: row;
+			justify-content: space-around;
+
+			button {
+				margin-top: 2em;
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.horoscope {
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.horoscope {
+		&__box {
+			margin-top: 4em;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		&__img {
+			&-shadow {
+				bottom: 0px;
+			}
+		}
+		&__title {
+			font-size: 3.6rem;
+		}
+
+		&__text {
+			font-size: 2rem;
+		}
+	}
+}

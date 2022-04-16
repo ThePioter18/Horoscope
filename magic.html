@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic-8-Ball</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/magic-ball.css">
+
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logo">
+            logo
+        </div>
+        <button class="burger-btn">
+            <i class="ti ti-menu-2"></i>
+            <i class="ti ti-x hide"></i>
+        </button>
+        <ul class="nav__items">
+            <li class="nav__item"><a href="index.html#horoscopes">Horoscopes</a></li>
+            <li class="nav__item"><a href="index.html#compatibility">Compatibility</a></li>
+            <li class="nav__item"><a href="magic.html">Magic 8-Ball</a></li>
+        </ul>
+    </nav>
+
+    <div class="box-wrapper">
+        <div class="wrapper">
+            <div class="info">
+                <h1>Magic 8-Ball</h1>
+                <p>Ask a question, click the ball and find out the truth!</p>
+            </div>
+
+            <div class="ball-img">
+                <img src="https://cdn.pixabay.com/photo/2012/04/16/11/05/ball-35516_960_720.png" alt="Billa numer 8.">
+            </div>
+            <div class="question-area">
+                <h2>Ask a question:</h2>
+                <input type="text">
+                <p class="answer"></p>
+                <p class="error"></p>
+            </div>
+
+        </div>
+
+        <div class="google-translate" id="google_translate_element">
+        </div>
+        <div class="google-translate-text">
+            <p>You can translate the content of this page by selecting a language in the select box.</p>
+        </div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        function setCookie(key, value, expiry) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+            document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,pl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+
+        setCookie('googtrans', '/en/pl', 0);
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+
+
+    <script src="js/magic-ball.js"></script>
+</body>
+
+</html>
